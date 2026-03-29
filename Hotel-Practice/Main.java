@@ -6,6 +6,7 @@ class Main{
 		Hotel hotel = new Hotel();
 		Restaurant res = new Restaurant();
 
+		//hotel.getRoomsStream();
 		//hotel.addAmenity("pool");
 
 		hotel.addRoom(new room(101, "AC", 1800));
@@ -199,6 +200,10 @@ class Main{
 				
 				case 18:
 				hotel.ReadFile();
+				break;
+				
+				case 19:
+				hotel.getRoomsStream();
 				break;
 				
 				case 20:

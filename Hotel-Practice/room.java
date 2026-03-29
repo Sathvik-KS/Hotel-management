@@ -34,6 +34,8 @@ class room implements Comparable<room>{
 			System.out.println("Room number: "+roomNumber+", Room empty."+this.price);
 	}
 	
+	public double getPrice(){return price;}
+	
 	@Override
 	public int compareTo(room r){return Double.compare(this.price, r.price);}
 	

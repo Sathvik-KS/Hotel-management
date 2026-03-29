@@ -8,6 +8,7 @@ import java.io.BufferedWriter;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.FileNotFoundException;
+import java.util.Comparator;
 
 class Hotel{
 	ArrayList<room> rooms = new ArrayList<>();
@@ -140,7 +141,6 @@ class Hotel{
 			b.showBook();
 	}
 	
-	
 	//Collections.sort(rooms);
 	public void saveBookings(){
 		if(bookings.isEmpty())
@@ -158,6 +158,7 @@ class Hotel{
 			System.out.println(e);
 		}
 	}
+
 	public void ReadFile(){
 		try(BufferedReader reader = new BufferedReader(new FileReader("Customers.txt"))){
 			String line;
@@ -173,5 +174,12 @@ class Hotel{
 		}
 	}
 	
+	public void getRoomsStream(){
+		rooms.stream()
+			.filter(room::getAvailable)
+			//.map(room::getRoomNumber)
+			.min(Comparator.comparingDouble(r -> r.getPrice()))
+			.ifPresent(r-> r.displayRoom());
+	}
 }
 	
