@@ -1,18 +1,30 @@
-class Booking{
-	String bookId;
-	Guest guest;
-	room rooms;
-	String date;
-	
-	public Booking(String bookId, Guest guest, room r, String date){
-		this.bookId = bookId;
+/**
+ * A confirmed booking that links a {@link Guest} to a {@link Room} for a date.
+ */
+class Booking {
+
+	private final String bookingId;
+	private final Guest guest;
+	private final Room room;
+	private final String date;
+
+	public Booking(String bookingId, Guest guest, Room room, String date) {
+		this.bookingId = bookingId;
 		this.guest = guest;
-		this.rooms = r;
+		this.room = room;
 		this.date = date;
 	}
-	
-	public void showBook(){
-		System.out.println(bookId+" "+this.guest.getGuestId()+" "+rooms.getRoomNumber()+" "+this.date);
+
+	public String getBookingId() { return bookingId; }
+
+	public Guest getGuest() { return guest; }
+
+	public Room getRoom() { return room; }
+
+	public String getDate() { return date; }
+
+	public void showBooking() {
+		System.out.println(bookingId + " " + guest.getGuestId() + " "
+				+ room.getRoomNumber() + " " + date);
 	}
-	
 }

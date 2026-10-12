@@ -1,0 +1,14 @@
+# Compiled Java bytecode
+*.class
+
+# Build output directories
+out/
+bin/
+target/
+
+# Generated runtime data written by the application
+Hotel-Practice/Hotel-Report.txt
+Hotel-Practice/Guests.txt
+
+# Archives / packaged copies
+*.zip
